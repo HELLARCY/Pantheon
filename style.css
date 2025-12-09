@@ -1,0 +1,322 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background: #222;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd36b;
+}
+
+/* ГЛАВНЫЙ БАННЕР */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/welcome.png') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Кнопка */
+.btn {
+    display: inline-block;
+    background: #ffd36b;
+    color: #222;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #ffbe2e;
+}
+
+/* О гостинице */
+.about {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    width: 55%;
+}
+
+.about-text h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* ПРЕИМУЩЕСТВА */
+.benefits {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.benefits h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.benefits li {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.benefits li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* ПРЕДПРОСМОТР НОМЕРОВ */
+.rooms-preview {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.rooms-preview h3 {
+    font-size: 32px;
+}
+
+.rooms-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.room-card {
+    background: white;
+    width: 30%;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.room-card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.room-card h4 {
+    margin: 15px;
+    font-size: 22px;
+}
+
+.room-card p {
+    padding: 0 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.room-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.price {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+/* Футер */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+/* Адаптивность для телефона */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img,
+    .about-text {
+        width: 100%;
+    }
+
+    .rooms-grid {
+        flex-direction: column;
+    }
+
+    .room-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .benefits ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+.success-message {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* плавное появление */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Контейнер формы */
+.booking-box {
+    width: 600px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+/* Заголовок формы */
+.booking-box h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Элементы формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* При фокусе */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #ffd36b;
+    box-shadow: 0 0 8px rgba(255, 211, 107, 0.4);
+}
+
+/* Кнопка */
+.booking-box .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    background: #ffd36b;
+    color: #222;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.booking-box .btn:hover {
+    background: #ffbe2e;
+}
+
